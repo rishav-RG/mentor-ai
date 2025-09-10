@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+import { neobrutalism } from "@clerk/themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +12,11 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: neobrutalism,
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
           <ThemeProvider
@@ -22,11 +27,13 @@ export default function RootLayout({ children }) {
           >
             {/* header */}
             <Header />
-            <main> {children}</main>
+            <main className="pt-16 min-h-[calc(100vh-64px-96px)]">
+              {children}
+            </main>
             {/* footer */}
-            <footer className="bg-muted/50 py-12 ">
+            <footer className="bg-muted/50 py-8 mt-auto">
               <div className="container mx-auto px-4 text-center text-gray-200">
-                <p>Made with ❤️ by{"Rishav"}</p>
+                <p>Made with ❤️ by {"Rishav"}</p>
               </div>
             </footer>
           </ThemeProvider>

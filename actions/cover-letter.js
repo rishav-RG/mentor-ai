@@ -102,7 +102,6 @@ export async function getCoverLetter(id) {
     },
   });
 }
-
 export async function deleteCoverLetter(id) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");

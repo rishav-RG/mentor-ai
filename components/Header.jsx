@@ -6,15 +6,16 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import Link from 'next/link'
 import Image from 'next/image'
 import { checkUser } from '@/lib/checkUser'
+import { ModeToggle } from './mode-toggle';
 
-const Header = async() => {
+const Header = async () => {
     await checkUser();
     return (
         <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
             <nav className="container mx-auto px-2 h-14 flex items-center justify-between">
                 <Link href="/" className="pl-0">
                     <div className="flex items-center">
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent">
+                        <h1 className="text-2xl font-bold text-black dark:bg-gradient-to-r dark:from-gray-200 dark:to-white dark:bg-clip-text dark:text-transparent">
                             Mentor<span className="text-primary">AI</span>
                         </h1>
                     </div>
@@ -89,6 +90,7 @@ const Header = async() => {
                             afterSignOutUrl="/"
                         />
                     </SignedIn>
+                    <ModeToggle />
                 </div>
             </nav>
         </header>

@@ -24,15 +24,15 @@ const Header = async () => {
                 {/* Action Buttons */}
                 <div className="flex items-center space-x-2 md:space-x-4">
                     <SignedIn>
-                        <Link href="/dashboard">
+                        <Link href="/dashboard" className="cursor-pointer">
                             <Button
                                 variant="outline"
-                                className="hidden md:inline-flex items-center gap-2"
+                                className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                             >
                                 <LayoutDashboard className="h-4 w-4" />
                                 Industry Insights
                             </Button>
-                            <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                            <Button variant="ghost" className="md:hidden w-10 h-10 p-0 cursor-pointer">
                                 <LayoutDashboard className="h-4 w-4" />
                             </Button>
                         </Link>
@@ -40,7 +40,7 @@ const Header = async () => {
                         {/* Growth Tools Dropdown */}
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button className="flex items-center gap-2">
+                                <Button className="flex items-center gap-2 cursor-pointer">
                                     <StarsIcon className="h-4 w-4" />
                                     <span className="hidden md:block">Growth Tools</span>
                                     <ChevronDown className="h-4 w-4" />
@@ -48,7 +48,7 @@ const Header = async () => {
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48">
                                 <DropdownMenuItem asChild>
-                                    <Link href="/resume" className="flex items-center gap-2">
+                                    <Link href="/resume" className="flex items-center gap-2 cursor-pointer">
                                         <FileText className="h-4 w-4" />
                                         Build Resume
                                     </Link>
@@ -56,14 +56,14 @@ const Header = async () => {
                                 <DropdownMenuItem asChild>
                                     <Link
                                         href="/ai-cover-letter"
-                                        className="flex items-center gap-2"
+                                        className="flex items-center gap-2 cursor-pointer"
                                     >
                                         <PenBox className="h-4 w-4" />
                                         Cover Letter
                                     </Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
-                                    <Link href="/interview" className="flex items-center gap-2">
+                                    <Link href="/interview" className="flex items-center gap-2 cursor-pointer">
                                         <GraduationCap className="h-4 w-4" />
                                         Interview Prep
                                     </Link>
@@ -74,7 +74,7 @@ const Header = async () => {
 
                     <SignedOut>
                         <SignInButton>
-                            <Button variant="outline">Sign In</Button>
+                            <Button variant="outline" className="cursor-pointer">Sign In</Button>
                         </SignInButton>
                     </SignedOut>
 
